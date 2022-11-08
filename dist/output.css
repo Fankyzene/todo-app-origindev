@@ -525,3 +525,7 @@ video {
 .underline {
   text-decoration-line: underline;
 }
+
+.line-through {
+  text-decoration-line: line-through;
+}

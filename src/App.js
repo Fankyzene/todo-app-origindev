@@ -1,7 +1,15 @@
 import React, { useEffect, useState } from 'react'
 
+import TodoForm from '../components/TodoForm/TodoForm'
+
 const App = () => {
-  return <h1 class="text-3xl font-bold underline">Hello world!</h1>
+  return (
+    <>
+      <header>Todo's list</header>
+
+      <TodoForm />
+    </>
+  )
 }
 
 export default App

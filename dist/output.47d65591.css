@@ -526,4 +526,8 @@ video {
   text-decoration-line: underline;
 }
 
+.line-through {
+  text-decoration-line: line-through;
+}
+
 /*# sourceMappingURL=/output.47d65591.css.map */
