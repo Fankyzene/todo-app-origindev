@@ -28871,6 +28871,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 var _react = _interopRequireWildcard(require("react"));
+var _Todolist = _interopRequireDefault(require("../TodoList/Todolist"));
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
@@ -28911,7 +28913,7 @@ function TodoForm(props) {
 }
 var _default = TodoForm;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js"}],"../components/TodoList/Todolist.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","../TodoList/Todolist":"../components/TodoList/Todolist.js"}],"../components/Todo/Todo.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -28919,6 +28921,80 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 var _react = _interopRequireWildcard(require("react"));
+var _TodoForm = _interopRequireDefault(require("../TodoForm/TodoForm"));
+var _Todolist = _interopRequireDefault(require("../TodoList/Todolist"));
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+function Todo(_ref) {
+  var todos = _ref.todos,
+    completeTodo = _ref.completeTodo,
+    removeTodo = _ref.removeTodo,
+    updateTodo = _ref.updateTodo;
+  var _useState = (0, _react.useState)({
+      id: null,
+      value: ''
+    }),
+    _useState2 = _slicedToArray(_useState, 2),
+    edit = _useState2[0],
+    setEdit = _useState2[1];
+  var submitUpdate = function submitUpdate(value) {
+    updateTodo(edit.id, value);
+    setEdit({
+      id: null,
+      value: ''
+    });
+  };
+  if (edit.id) {
+    return /*#__PURE__*/_react.default.createElement(_TodoForm.default, {
+      edit: edit,
+      onSubmit: submitUpdate
+    });
+  }
+  return todos.map(function (todo, index) {
+    return /*#__PURE__*/_react.default.createElement("div", {
+      className: todo.isComplete ? 'todo-row complete' : 'todo-row',
+      key: index
+    }, /*#__PURE__*/_react.default.createElement("div", {
+      key: todo.id,
+      onClick: function onClick() {
+        return completeTodo(todo.id);
+      }
+    }, todo.text), /*#__PURE__*/_react.default.createElement("div", {
+      className: "icons"
+    }, /*#__PURE__*/_react.default.createElement("div", {
+      className: "delete-icon",
+      onClick: function onClick() {
+        return removeTodo(todo.id);
+      }
+    }, "remove"), /*#__PURE__*/_react.default.createElement("div", {
+      className: "edit-icon",
+      onClick: function onClick() {
+        return setEdit({
+          id: todo.id,
+          value: todo.text
+        });
+      }
+    }, "edit")));
+  });
+}
+var _default = Todo;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js","../TodoForm/TodoForm":"../components/TodoForm/TodoForm.js","../TodoList/Todolist":"../components/TodoList/Todolist.js"}],"../components/TodoList/Todolist.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _react = _interopRequireWildcard(require("react"));
+var _Todo = _interopRequireDefault(require("../Todo/Todo"));
 var _TodoForm = _interopRequireDefault(require("../TodoForm/TodoForm"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -28945,15 +29021,45 @@ function Todolist() {
     }
     var newTodos = [todo].concat(_toConsumableArray(todos));
     setTodos(newTodos);
-    (_console = console).log.apply(_console, _toConsumableArray(todos));
+    (_console = console).log.apply(_console, [todo].concat(_toConsumableArray(todos)));
+  };
+  var updateTodo = function updateTodo(todoId, newValue) {
+    if (!newValue.text || /^\s*$/.test(newValue.text)) {
+      return;
+    }
+    setTodos(function (prev) {
+      return prev.map(function (item) {
+        return item.id === todoId ? newValue : item;
+      });
+    });
+  };
+  var removeTodo = function removeTodo(id) {
+    var removeArr = _toConsumableArray(todos).filter(function (todo) {
+      return todo.id !== id;
+    });
+    setTodos(removeArr);
+  };
+  var completeTodo = function completeTodo(id) {
+    var updatedTodos = todos.map(function (todo) {
+      if (todo.id === id) {
+        todo.isComplete = !todo.isComplete;
+        return todo;
+      }
+      setTodos(updatedTodos);
+    });
   };
   return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "What to do next?"), /*#__PURE__*/_react.default.createElement(_TodoForm.default, {
     onSubmit: addTodo
+  }), /*#__PURE__*/_react.default.createElement(_Todo.default, {
+    todos: todos,
+    completeTodo: completeTodo,
+    removeTodo: removeTodo,
+    updateTodo: updateTodo
   }));
 }
 var _default = Todolist;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","../TodoForm/TodoForm":"../components/TodoForm/TodoForm.js"}],"App.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","../Todo/Todo":"../components/Todo/Todo.js","../TodoForm/TodoForm":"../components/TodoForm/TodoForm.js"}],"App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
