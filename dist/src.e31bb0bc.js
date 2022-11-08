@@ -28890,7 +28890,7 @@ function TodoForm(props) {
   var handleSubmit = function handleSubmit(e) {
     e.preventDefault();
     props.onSubmit({
-      id: Math.floor(Math.random() * 10000),
+      id: Date.now(),
       text: input
     });
     setInput('');
