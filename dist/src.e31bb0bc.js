@@ -28882,10 +28882,14 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 function TodoForm(props) {
-  var _useState = (0, _react.useState)(''),
+  var _useState = (0, _react.useState)(props.edit ? props.edit.value : ''),
     _useState2 = _slicedToArray(_useState, 2),
     input = _useState2[0],
     setInput = _useState2[1];
+  var inputRef = (0, _react.useRef)(null);
+  (0, _react.useEffect)(function () {
+    inputRef.current.focus();
+  });
   var handleChange = function handleChange(e) {
     setInput(e.target.value);
   };
@@ -28900,16 +28904,27 @@ function TodoForm(props) {
   return /*#__PURE__*/_react.default.createElement("form", {
     className: "todo-form",
     onSubmit: handleSubmit
-  }, /*#__PURE__*/_react.default.createElement("input", {
+  }, props.edit ? /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("input", {
+    type: "text",
+    placeholder: "Update your item",
+    value: input,
+    name: "text",
+    className: "todo-input edit",
+    onChange: handleChange,
+    ref: inputRef
+  }), /*#__PURE__*/_react.default.createElement("button", {
+    className: "todo-button edit"
+  }, "Update")) : /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("input", {
     type: "text",
     placeholder: "Add todo",
     value: input,
     name: "text",
     className: "todo-input",
-    onChange: handleChange
+    onChange: handleChange,
+    ref: inputRef
   }), /*#__PURE__*/_react.default.createElement("button", {
     className: "todo-button"
-  }, "Add todo"));
+  }, "Add todo")));
 }
 var _default = TodoForm;
 exports.default = _default;
