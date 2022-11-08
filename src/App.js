@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from 'react'
-
-import TodoForm from '../components/TodoForm/TodoForm'
+import Todolist from '../components/TodoList/Todolist'
 
 const App = () => {
   return (
     <>
       <header>Todo's list</header>
-
-      <TodoForm />
+      <Todolist />
     </>
   )
 }
