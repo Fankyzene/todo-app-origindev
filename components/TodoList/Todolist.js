@@ -43,7 +43,9 @@ function Todolist() {
   }
   return (
     <div>
-      <h1>What to do next?</h1>
+      <h1 class="text-3xl font-bold underline text-gray-200">
+        What to do next?
+      </h1>
       <TodoForm onSubmit={addTodo} />
       <Todo
         todos={todos}

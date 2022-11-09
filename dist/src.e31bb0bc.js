@@ -28902,7 +28902,6 @@ function TodoForm(props) {
     setInput('');
   };
   return /*#__PURE__*/_react.default.createElement("form", {
-    className: "todo-form",
     onSubmit: handleSubmit
   }, props.edit ? /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("input", {
     type: "text",
@@ -28973,7 +28972,7 @@ function Todo(_ref) {
     });
   }
   return todos.map(function (todo, index) {
-    return /*#__PURE__*/_react.default.createElement("div", {
+    return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", {
       className: todo.isComplete ? 'todo-row complete' : 'todo-row',
       key: index
     }, /*#__PURE__*/_react.default.createElement("div", {
@@ -28996,7 +28995,7 @@ function Todo(_ref) {
           value: todo.text
         });
       }
-    }, "edit")));
+    }, "edit"))));
   });
 }
 var _default = Todo;
@@ -29063,7 +29062,9 @@ function Todolist() {
       setTodos(updatedTodos);
     });
   };
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "What to do next?"), /*#__PURE__*/_react.default.createElement(_TodoForm.default, {
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", {
+    class: "text-3xl font-bold underline text-gray-200"
+  }, "What to do next?"), /*#__PURE__*/_react.default.createElement(_TodoForm.default, {
     onSubmit: addTodo
   }), /*#__PURE__*/_react.default.createElement(_Todo.default, {
     todos: todos,
@@ -29124,7 +29125,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54137" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63708" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
