@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Todolist from '../components/TodoList/Todolist'
+import Todolist from './components/TodoList/Todolist'
 
 const App = () => {
   return (
