@@ -28905,13 +28905,15 @@ function TodoForm(props) {
   }, props.edit ? /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("input", {
     type: "text",
     placeholder: "Update your item",
+    "aria-label": "Update your todo's text",
     value: input,
     name: "text",
     className: "flex flex-row items-center content-end gap-y-1.5 justify-between text-base p-3 font-mono w-96 h-9 bg-green-600 mt-3",
     onChange: handleChange,
     ref: inputRef
   }), /*#__PURE__*/_react.default.createElement("button", {
-    class: "flex-row content-center justify-center"
+    class: "flex-row content-center justify-center",
+    "aria-label": "Update todo"
   }, /*#__PURE__*/_react.default.createElement("svg", {
     className: "w-6 h-6",
     fill: "none",
@@ -28926,13 +28928,15 @@ function TodoForm(props) {
   })))) : /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("input", {
     type: "text",
     placeholder: "Add todo",
+    "aria-label": "Write todo here",
     value: input,
     name: "text",
     className: "max-w-md mb-2",
     onChange: handleChange,
     ref: inputRef
   }), /*#__PURE__*/_react.default.createElement("button", {
-    className: "max-w-md text-2xl pl-2.5 "
+    className: "max-w-md text-2xl pl-2.5",
+    "aria-label": "Add todo"
   }, /*#__PURE__*/_react.default.createElement("svg", {
     className: "w-6 h-6",
     fill: "none",
@@ -28994,7 +28998,7 @@ function Todo(_ref) {
   console.log(todos);
   return todos.map(function (todo, index) {
     return /*#__PURE__*/_react.default.createElement("div", {
-      class: ""
+      key: index
     }, /*#__PURE__*/_react.default.createElement("div", {
       className: todo.isComplete ? 'flex flex-row items-center content-end gap-y-1.5 justify-between text-base p-3 font-mono w-96 h-10 bg-orange-600' : 'flex flex-row items-center content-end gap-y-1.5 justify-between text-base p-3 font-mono w-96 h-10 bg-green-600 mt-3',
       key: index
@@ -29004,7 +29008,8 @@ function Todo(_ref) {
         return completeTodo(todo.id);
       }
     }, todo.text), /*#__PURE__*/_react.default.createElement("div", {
-      className: "flex flex-row gap-1"
+      className: "flex flex-row gap-1",
+      "aria-label": "Delete todo"
     }, /*#__PURE__*/_react.default.createElement("div", {
       className: "delete-icon",
       onClick: function onClick() {
@@ -29023,6 +29028,7 @@ function Todo(_ref) {
       d: "M6 18L18 6M6 6l12 12"
     }))), /*#__PURE__*/_react.default.createElement("div", {
       className: "edit-icon",
+      "aria-label": "Edit todo",
       onClick: function onClick() {
         return setEdit({
           id: todo.id,
@@ -29108,7 +29114,8 @@ function Todolist() {
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "flex flex-col items-center justify-center font-mono w-1/2"
   }, /*#__PURE__*/_react.default.createElement("h1", {
-    className: "text-3xl m-3 font-bold underline text-gray-100 w-auto"
+    className: "text-3xl m-3 font-bold underline text-gray-100 w-auto",
+    "aria-label": "What to do next?"
   }, "What to do next?"), /*#__PURE__*/_react.default.createElement(_TodoForm.default, {
     onSubmit: addTodo
   }), /*#__PURE__*/_react.default.createElement(_Todo.default, {
@@ -29134,7 +29141,8 @@ function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "functio
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 var App = function App() {
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("header", {
-    className: "text-5xl m-1.5 font-bold text-4xl font-mono text-gray-300"
+    className: "text-5xl m-1.5 font-bold text-4xl font-mono text-gray-300",
+    "aria-label": "Todo's list"
   }, "Todo's list"), /*#__PURE__*/_react.default.createElement(_Todolist.default, null));
 };
 var _default = App;

@@ -21,7 +21,7 @@ function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
   }
   console.log(todos)
   return todos.map((todo, index) => (
-    <div class="">
+    <div key={index}>
       <div
         className={
           todo.isComplete
@@ -33,7 +33,7 @@ function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
         <div key={todo.id} onClick={() => completeTodo(todo.id)}>
           {todo.text}
         </div>
-        <div className="flex flex-row gap-1">
+        <div className="flex flex-row gap-1" aria-label="Delete todo">
           <div className="delete-icon" onClick={() => removeTodo(todo.id)}>
             <svg
               class="w-6 h-6"
@@ -52,6 +52,7 @@ function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
           </div>
           <div
             className="edit-icon"
+            aria-label="Edit todo"
             onClick={() => setEdit({ id: todo.id, value: todo.text })}
           >
             <svg

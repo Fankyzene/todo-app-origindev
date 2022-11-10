@@ -42,7 +42,10 @@ function Todolist() {
   }
   return (
     <div className="flex flex-col items-center justify-center font-mono w-1/2">
-      <h1 className="text-3xl m-3 font-bold underline text-gray-100 w-auto">
+      <h1
+        className="text-3xl m-3 font-bold underline text-gray-100 w-auto"
+        aria-label="What to do next?"
+      >
         What to do next?
       </h1>
       <TodoForm onSubmit={addTodo} />

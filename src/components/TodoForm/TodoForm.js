@@ -33,13 +33,17 @@ function TodoForm(props, ...todos) {
           <input
             type="text"
             placeholder="Update your item"
+            aria-label="Update your todo's text"
             value={input}
             name="text"
             className="flex flex-row items-center content-end gap-y-1.5 justify-between text-base p-3 font-mono w-96 h-9 bg-green-600 mt-3"
             onChange={handleChange}
             ref={inputRef}
           />
-          <button class="flex-row content-center justify-center">
+          <button
+            class="flex-row content-center justify-center"
+            aria-label="Update todo"
+          >
             <svg
               className="w-6 h-6"
               fill="none"
@@ -61,6 +65,7 @@ function TodoForm(props, ...todos) {
           <input
             type="text"
             placeholder="Add todo"
+            aria-label="Write todo here"
             value={input}
             name="text"
             className="max-w-md mb-2"
@@ -68,7 +73,7 @@ function TodoForm(props, ...todos) {
             ref={inputRef}
           />
 
-          <button className="max-w-md text-2xl pl-2.5 ">
+          <button className="max-w-md text-2xl pl-2.5" aria-label="Add todo">
             <svg
               className="w-6 h-6"
               fill="none"
