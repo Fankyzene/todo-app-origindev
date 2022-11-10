@@ -13,7 +13,6 @@ function Todolist() {
     const newTodos = [todo, ...todos]
 
     setTodos(newTodos)
-    console.log(todo, ...todos)
   }
 
   const updateTodo = (todoId, newValue) => {
@@ -33,17 +32,19 @@ function Todolist() {
   }
 
   const completeTodo = (id) => {
+    console.log(todos)
     let updatedTodos = todos.map((todo) => {
       if (todo.id === id) {
         todo.isComplete = !todo.isComplete
         return todo
       }
       setTodos(updatedTodos)
+      console.log(todos)
     })
   }
   return (
     <div class="flex flex-col items-center justify-center">
-      <h1 class="text-3xl font-bold underline text-gray-200 max-w-sm">
+      <h1 class="text-3xl m-3 font-bold underline text-gray-100 max-w-sm">
         What to do next?
       </h1>
       <TodoForm onSubmit={addTodo} />

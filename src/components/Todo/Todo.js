@@ -21,15 +21,19 @@ function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
   }
 
   return todos.map((todo, index) => (
-    <div>
+    <div class="">
       <div
-        className={todo.isComplete ? 'todo-row complete' : 'todo-row'}
+        class={
+          todo.isComplete
+            ? 'flex flex-row items-center content-end gap-y-1.5 justify-between text-base p-3 font-mono w-60 h-10 bg-orange-600'
+            : 'flex flex-row items-center content-end gap-y-1.5 justify-between text-base p-3 font-mono w-60 h-10 bg-green-600'
+        }
         key={index}
       >
         <div key={todo.id} onClick={() => completeTodo(todo.id)}>
           {todo.text}
         </div>
-        <div className="icons">
+        <div class="flex flex-row ">
           <div className="delete-icon" onClick={() => removeTodo(todo.id)}>
             remove
           </div>

@@ -28969,8 +28969,10 @@ function Todo(_ref) {
     });
   }
   return todos.map(function (todo, index) {
-    return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", {
-      className: todo.isComplete ? 'todo-row complete' : 'todo-row',
+    return /*#__PURE__*/_react.default.createElement("div", {
+      class: ""
+    }, /*#__PURE__*/_react.default.createElement("div", {
+      class: todo.isComplete ? 'flex flex-row items-center content-end gap-y-1.5 justify-between text-base p-3 font-mono w-60 h-10 bg-orange-600' : 'flex flex-row items-center content-end gap-y-1.5 justify-between text-base p-3 font-mono w-60 h-10 bg-green-600',
       key: index
     }, /*#__PURE__*/_react.default.createElement("div", {
       key: todo.id,
@@ -28978,7 +28980,7 @@ function Todo(_ref) {
         return completeTodo(todo.id);
       }
     }, todo.text), /*#__PURE__*/_react.default.createElement("div", {
-      className: "icons"
+      class: "flex flex-row "
     }, /*#__PURE__*/_react.default.createElement("div", {
       className: "delete-icon",
       onClick: function onClick() {
@@ -29026,13 +29028,11 @@ function Todolist() {
     todos = _useState2[0],
     setTodos = _useState2[1];
   var addTodo = function addTodo(todo) {
-    var _console;
     if (!todo.text || /^\s*$/.test(todo.text)) {
       return;
     }
     var newTodos = [todo].concat(_toConsumableArray(todos));
     setTodos(newTodos);
-    (_console = console).log.apply(_console, [todo].concat(_toConsumableArray(todos)));
   };
   var updateTodo = function updateTodo(todoId, newValue) {
     if (!newValue.text || /^\s*$/.test(newValue.text)) {
@@ -29051,18 +29051,20 @@ function Todolist() {
     setTodos(removeArr);
   };
   var completeTodo = function completeTodo(id) {
+    console.log(todos);
     var updatedTodos = todos.map(function (todo) {
       if (todo.id === id) {
         todo.isComplete = !todo.isComplete;
         return todo;
       }
       setTodos(updatedTodos);
+      console.log(todos);
     });
   };
   return /*#__PURE__*/_react.default.createElement("div", {
     class: "flex flex-col items-center justify-center"
   }, /*#__PURE__*/_react.default.createElement("h1", {
-    class: "text-3xl font-bold underline text-gray-200 max-w-sm"
+    class: "text-3xl m-3 font-bold underline text-gray-100 max-w-sm"
   }, "What to do next?"), /*#__PURE__*/_react.default.createElement(_TodoForm.default, {
     onSubmit: addTodo
   }), /*#__PURE__*/_react.default.createElement(_Todo.default, {
@@ -29088,7 +29090,7 @@ function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "functio
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 var App = function App() {
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("header", {
-    class: "font-bold text-4xl font-mono text-gray-300 max-w-md"
+    class: "text-5xl m-1.5 font-bold text-4xl font-mono text-gray-300 max-w-md"
   }, "Todo's list"), /*#__PURE__*/_react.default.createElement(_Todolist.default, null));
 };
 var _default = App;

@@ -4,7 +4,7 @@ import Todolist from './components/TodoList/Todolist'
 const App = () => {
   return (
     <>
-      <header class="font-bold text-4xl font-mono text-gray-300 max-w-md">
+      <header class="text-5xl m-1.5 font-bold text-4xl font-mono text-gray-300 max-w-md">
         Todo's list
       </header>
       <Todolist />
