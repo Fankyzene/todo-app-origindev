@@ -32,7 +32,7 @@ function TodoForm(props, ...todos) {
             placeholder="Update your item"
             value={input}
             name="text"
-            className="todo-input edit"
+            class="max-w-md"
             onChange={handleChange}
             ref={inputRef}
           />
@@ -45,12 +45,12 @@ function TodoForm(props, ...todos) {
             placeholder="Add todo"
             value={input}
             name="text"
-            className="todo-input"
+            class="max-w-md"
             onChange={handleChange}
             ref={inputRef}
           />
 
-          <button className="todo-button">Add todo</button>
+          <button class="max-w-md">Add todo</button>
         </>
       )}
     </form>

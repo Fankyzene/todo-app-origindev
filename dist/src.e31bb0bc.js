@@ -28906,7 +28906,7 @@ function TodoForm(props) {
     placeholder: "Update your item",
     value: input,
     name: "text",
-    className: "todo-input edit",
+    class: "max-w-md",
     onChange: handleChange,
     ref: inputRef
   }), /*#__PURE__*/_react.default.createElement("button", {
@@ -28916,11 +28916,11 @@ function TodoForm(props) {
     placeholder: "Add todo",
     value: input,
     name: "text",
-    className: "todo-input",
+    class: "max-w-md",
     onChange: handleChange,
     ref: inputRef
   }), /*#__PURE__*/_react.default.createElement("button", {
-    className: "todo-button"
+    class: "max-w-md"
   }, "Add todo")));
 }
 var _default = TodoForm;
@@ -29059,8 +29059,10 @@ function Todolist() {
       setTodos(updatedTodos);
     });
   };
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", {
-    class: "text-3xl font-bold underline text-gray-200"
+  return /*#__PURE__*/_react.default.createElement("div", {
+    class: "flex flex-col items-center justify-center"
+  }, /*#__PURE__*/_react.default.createElement("h1", {
+    class: "text-3xl font-bold underline text-gray-200 max-w-sm"
   }, "What to do next?"), /*#__PURE__*/_react.default.createElement(_TodoForm.default, {
     onSubmit: addTodo
   }), /*#__PURE__*/_react.default.createElement(_Todo.default, {
@@ -29085,7 +29087,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 var App = function App() {
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("header", null, "Todo's list"), /*#__PURE__*/_react.default.createElement(_Todolist.default, null));
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("header", {
+    class: "font-bold text-4xl font-mono text-gray-300 max-w-md"
+  }, "Todo's list"), /*#__PURE__*/_react.default.createElement(_Todolist.default, null));
 };
 var _default = App;
 exports.default = _default;
@@ -29122,7 +29126,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52477" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52231" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

@@ -42,8 +42,8 @@ function Todolist() {
     })
   }
   return (
-    <div>
-      <h1 class="text-3xl font-bold underline text-gray-200">
+    <div class="flex flex-col items-center justify-center">
+      <h1 class="text-3xl font-bold underline text-gray-200 max-w-sm">
         What to do next?
       </h1>
       <TodoForm onSubmit={addTodo} />
