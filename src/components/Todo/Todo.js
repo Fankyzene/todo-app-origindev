@@ -19,14 +19,14 @@ function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
   if (edit.id) {
     return <TodoForm edit={edit} onSubmit={submitUpdate} />
   }
-
+  console.log(todos)
   return todos.map((todo, index) => (
     <div class="">
       <div
         class={
           todo.isComplete
-            ? 'flex flex-row items-center content-end gap-y-1.5 justify-between text-base p-3 font-mono w-60 h-10 bg-orange-600'
-            : 'flex flex-row items-center content-end gap-y-1.5 justify-between text-base p-3 font-mono w-96 h-10 bg-green-600'
+            ? 'flex flex-row items-center content-end gap-y-1.5 justify-between text-base p-3 font-mono w-96 h-10 bg-orange-600'
+            : 'flex flex-row items-center content-end gap-y-1.5 justify-between text-base p-3 font-mono w-96 h-10 bg-green-600 mt-3'
         }
         key={index}
       >

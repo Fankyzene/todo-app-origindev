@@ -35,7 +35,7 @@ function TodoForm(props, ...todos) {
             placeholder="Update your item"
             value={input}
             name="text"
-            class="flex flex-row items-center content-end justify-between gap-y-1.5 text-base p-3 font-mono w-auto h-10 bg-green-600"
+            class="flex flex-row items-center content-end gap-y-1.5 justify-between text-base p-3 font-mono w-96 h-9 bg-green-600 mt-3"
             onChange={handleChange}
             ref={inputRef}
           />

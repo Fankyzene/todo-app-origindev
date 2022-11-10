@@ -28907,7 +28907,7 @@ function TodoForm(props) {
     placeholder: "Update your item",
     value: input,
     name: "text",
-    class: "flex flex-row items-center content-end justify-between gap-y-1.5 text-base p-3 font-mono w-auto h-10 bg-green-600",
+    class: "flex flex-row items-center content-end gap-y-1.5 justify-between text-base p-3 font-mono w-96 h-9 bg-green-600 mt-3",
     onChange: handleChange,
     ref: inputRef
   }), /*#__PURE__*/_react.default.createElement("button", {
@@ -28991,11 +28991,12 @@ function Todo(_ref) {
       onSubmit: submitUpdate
     });
   }
+  console.log(todos);
   return todos.map(function (todo, index) {
     return /*#__PURE__*/_react.default.createElement("div", {
       class: ""
     }, /*#__PURE__*/_react.default.createElement("div", {
-      class: todo.isComplete ? 'flex flex-row items-center content-end gap-y-1.5 justify-between text-base p-3 font-mono w-60 h-10 bg-orange-600' : 'flex flex-row items-center content-end gap-y-1.5 justify-between text-base p-3 font-mono w-96 h-10 bg-green-600',
+      class: todo.isComplete ? 'flex flex-row items-center content-end gap-y-1.5 justify-between text-base p-3 font-mono w-96 h-10 bg-orange-600' : 'flex flex-row items-center content-end gap-y-1.5 justify-between text-base p-3 font-mono w-96 h-10 bg-green-600 mt-3',
       key: index
     }, /*#__PURE__*/_react.default.createElement("div", {
       key: todo.id,
@@ -29096,14 +29097,12 @@ function Todolist() {
     setTodos(removeArr);
   };
   var completeTodo = function completeTodo(id) {
-    console.log(todos);
     var updatedTodos = todos.map(function (todo) {
       if (todo.id === id) {
         todo.isComplete = !todo.isComplete;
         return todo;
       }
       setTodos(updatedTodos);
-      console.log(todos);
     });
   };
   return /*#__PURE__*/_react.default.createElement("div", {
