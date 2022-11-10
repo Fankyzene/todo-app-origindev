@@ -43,7 +43,7 @@ function Todolist() {
     })
   }
   return (
-    <div class="flex flex-col items-center justify-center font-mono w-auto">
+    <div class="flex flex-col items-center justify-center font-mono w-1/2">
       <h1 class="text-3xl m-3 font-bold underline text-gray-100 w-auto">
         What to do next?
       </h1>

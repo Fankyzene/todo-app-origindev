@@ -25,7 +25,7 @@ function TodoForm(props, ...todos) {
 
   return (
     <form
-      class="flex flex-row items-center justify-items-center w-100 font-mono"
+      class="flex flex-row items-center justify-items-center w-200 font-mono"
       onSubmit={handleSubmit}
     >
       {props.edit ? (

@@ -28900,7 +28900,7 @@ function TodoForm(props) {
     setInput('');
   };
   return /*#__PURE__*/_react.default.createElement("form", {
-    class: "flex flex-row items-center justify-items-center w-100 font-mono",
+    class: "flex flex-row items-center justify-items-center w-200 font-mono",
     onSubmit: handleSubmit
   }, props.edit ? /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("input", {
     type: "text",
@@ -28995,7 +28995,7 @@ function Todo(_ref) {
     return /*#__PURE__*/_react.default.createElement("div", {
       class: ""
     }, /*#__PURE__*/_react.default.createElement("div", {
-      class: todo.isComplete ? 'flex flex-row items-center content-end gap-y-1.5 justify-between text-base p-3 font-mono w-60 h-10 bg-orange-600' : 'flex flex-row items-center content-end gap-y-1.5 justify-between text-base p-3 font-mono w-60 h-10 bg-green-600',
+      class: todo.isComplete ? 'flex flex-row items-center content-end gap-y-1.5 justify-between text-base p-3 font-mono w-60 h-10 bg-orange-600' : 'flex flex-row items-center content-end gap-y-1.5 justify-between text-base p-3 font-mono w-96 h-10 bg-green-600',
       key: index
     }, /*#__PURE__*/_react.default.createElement("div", {
       key: todo.id,
@@ -29107,7 +29107,7 @@ function Todolist() {
     });
   };
   return /*#__PURE__*/_react.default.createElement("div", {
-    class: "flex flex-col items-center justify-center font-mono w-auto"
+    class: "flex flex-col items-center justify-center font-mono w-1/2"
   }, /*#__PURE__*/_react.default.createElement("h1", {
     class: "text-3xl m-3 font-bold underline text-gray-100 w-auto"
   }, "What to do next?"), /*#__PURE__*/_react.default.createElement(_TodoForm.default, {
