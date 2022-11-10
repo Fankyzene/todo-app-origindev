@@ -28900,49 +28900,49 @@ function TodoForm(props) {
     setInput('');
   };
   return /*#__PURE__*/_react.default.createElement("form", {
-    class: "flex flex-row items-center justify-items-center w-200 font-mono",
+    className: "flex flex-row items-center justify-items-center w-200 font-mono",
     onSubmit: handleSubmit
   }, props.edit ? /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("input", {
     type: "text",
     placeholder: "Update your item",
     value: input,
     name: "text",
-    class: "flex flex-row items-center content-end gap-y-1.5 justify-between text-base p-3 font-mono w-96 h-9 bg-green-600 mt-3",
+    className: "flex flex-row items-center content-end gap-y-1.5 justify-between text-base p-3 font-mono w-96 h-9 bg-green-600 mt-3",
     onChange: handleChange,
     ref: inputRef
   }), /*#__PURE__*/_react.default.createElement("button", {
     class: "flex-row content-center justify-center"
   }, /*#__PURE__*/_react.default.createElement("svg", {
-    class: "w-6 h-6",
+    className: "w-6 h-6",
     fill: "none",
     stroke: "white",
     viewBox: "0 0 24 24",
     xmlns: "http://www.w3.org/2000/svg"
   }, /*#__PURE__*/_react.default.createElement("path", {
-    "stroke-linecap": "round",
-    "stroke-linejoin": "round",
-    "stroke-width": "2",
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeWidth: "2",
     d: "M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
   })))) : /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("input", {
     type: "text",
     placeholder: "Add todo",
     value: input,
     name: "text",
-    class: "max-w-md mb-2",
+    className: "max-w-md mb-2",
     onChange: handleChange,
     ref: inputRef
   }), /*#__PURE__*/_react.default.createElement("button", {
-    class: "max-w-md text-2xl pl-2.5 "
+    className: "max-w-md text-2xl pl-2.5 "
   }, /*#__PURE__*/_react.default.createElement("svg", {
-    class: "w-6 h-6",
+    className: "w-6 h-6",
     fill: "none",
     stroke: "currentColor",
     viewBox: "0 0 24 24",
     xmlns: "http://www.w3.org/2000/svg"
   }, /*#__PURE__*/_react.default.createElement("path", {
-    "stroke-linecap": "round",
-    "stroke-linejoin": "round",
-    "stroke-width": "2",
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeWidth: "2",
     d: "M12 6v6m0 0v6m0-6h6m-6 0H6"
   })))));
 }
@@ -28996,7 +28996,7 @@ function Todo(_ref) {
     return /*#__PURE__*/_react.default.createElement("div", {
       class: ""
     }, /*#__PURE__*/_react.default.createElement("div", {
-      class: todo.isComplete ? 'flex flex-row items-center content-end gap-y-1.5 justify-between text-base p-3 font-mono w-96 h-10 bg-orange-600' : 'flex flex-row items-center content-end gap-y-1.5 justify-between text-base p-3 font-mono w-96 h-10 bg-green-600 mt-3',
+      className: todo.isComplete ? 'flex flex-row items-center content-end gap-y-1.5 justify-between text-base p-3 font-mono w-96 h-10 bg-orange-600' : 'flex flex-row items-center content-end gap-y-1.5 justify-between text-base p-3 font-mono w-96 h-10 bg-green-600 mt-3',
       key: index
     }, /*#__PURE__*/_react.default.createElement("div", {
       key: todo.id,
@@ -29004,7 +29004,7 @@ function Todo(_ref) {
         return completeTodo(todo.id);
       }
     }, todo.text), /*#__PURE__*/_react.default.createElement("div", {
-      class: "flex flex-row gap-1"
+      className: "flex flex-row gap-1"
     }, /*#__PURE__*/_react.default.createElement("div", {
       className: "delete-icon",
       onClick: function onClick() {
@@ -29017,9 +29017,9 @@ function Todo(_ref) {
       viewBox: "0 0 24 24",
       xmlns: "http://www.w3.org/2000/svg"
     }, /*#__PURE__*/_react.default.createElement("path", {
-      "stroke-linecap": "round",
-      "stroke-linejoin": "round",
-      "stroke-width": "2",
+      strokeLinecap: "round",
+      strokeLinejoin: "round",
+      strokeWidth: "2",
       d: "M6 18L18 6M6 6l12 12"
     }))), /*#__PURE__*/_react.default.createElement("div", {
       className: "edit-icon",
@@ -29030,15 +29030,15 @@ function Todo(_ref) {
         });
       }
     }, /*#__PURE__*/_react.default.createElement("svg", {
-      class: "w-6 h-6",
+      className: "w-6 h-6",
       fill: "none",
       stroke: "currentColor",
       viewBox: "0 0 24 24",
       xmlns: "http://www.w3.org/2000/svg"
     }, /*#__PURE__*/_react.default.createElement("path", {
-      "stroke-linecap": "round",
-      "stroke-linejoin": "round",
-      "stroke-width": "2",
+      strokeLinecap: "round",
+      strokeLinejoin: "round",
+      strokeWidth: "2",
       d: "M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"
     }))))));
   });
@@ -29106,9 +29106,9 @@ function Todolist() {
     });
   };
   return /*#__PURE__*/_react.default.createElement("div", {
-    class: "flex flex-col items-center justify-center font-mono w-1/2"
+    className: "flex flex-col items-center justify-center font-mono w-1/2"
   }, /*#__PURE__*/_react.default.createElement("h1", {
-    class: "text-3xl m-3 font-bold underline text-gray-100 w-auto"
+    className: "text-3xl m-3 font-bold underline text-gray-100 w-auto"
   }, "What to do next?"), /*#__PURE__*/_react.default.createElement(_TodoForm.default, {
     onSubmit: addTodo
   }), /*#__PURE__*/_react.default.createElement(_Todo.default, {
@@ -29134,7 +29134,7 @@ function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "functio
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 var App = function App() {
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("header", {
-    class: "text-5xl m-1.5 font-bold text-4xl font-mono text-gray-300"
+    className: "text-5xl m-1.5 font-bold text-4xl font-mono text-gray-300"
   }, "Todo's list"), /*#__PURE__*/_react.default.createElement(_Todolist.default, null));
 };
 var _default = App;
