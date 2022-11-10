@@ -24,7 +24,10 @@ function TodoForm(props, ...todos) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form
+      class="flex flex-row items-center justify-items-center w-100 font-mono"
+      onSubmit={handleSubmit}
+    >
       {props.edit ? (
         <>
           <input
@@ -32,15 +35,15 @@ function TodoForm(props, ...todos) {
             placeholder="Update your item"
             value={input}
             name="text"
-            class="max-w-md"
+            class="flex flex-row items-center content-end justify-between gap-y-1.5 text-base p-3 font-mono w-auto h-10 bg-green-600"
             onChange={handleChange}
             ref={inputRef}
           />
-          <button className="todo-button edit">
+          <button class="flex-row content-center justify-center">
             <svg
               class="w-6 h-6"
               fill="none"
-              stroke="currentColor"
+              stroke="white"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >

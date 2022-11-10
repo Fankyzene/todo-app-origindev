@@ -28900,21 +28900,22 @@ function TodoForm(props) {
     setInput('');
   };
   return /*#__PURE__*/_react.default.createElement("form", {
+    class: "flex flex-row items-center justify-items-center w-100 font-mono",
     onSubmit: handleSubmit
   }, props.edit ? /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("input", {
     type: "text",
     placeholder: "Update your item",
     value: input,
     name: "text",
-    class: "max-w-md",
+    class: "flex flex-row items-center content-end justify-between gap-y-1.5 text-base p-3 font-mono w-auto h-10 bg-green-600",
     onChange: handleChange,
     ref: inputRef
   }), /*#__PURE__*/_react.default.createElement("button", {
-    className: "todo-button edit"
+    class: "flex-row content-center justify-center"
   }, /*#__PURE__*/_react.default.createElement("svg", {
     class: "w-6 h-6",
     fill: "none",
-    stroke: "currentColor",
+    stroke: "white",
     viewBox: "0 0 24 24",
     xmlns: "http://www.w3.org/2000/svg"
   }, /*#__PURE__*/_react.default.createElement("path", {
@@ -29106,9 +29107,9 @@ function Todolist() {
     });
   };
   return /*#__PURE__*/_react.default.createElement("div", {
-    class: "flex flex-col items-center justify-center"
+    class: "flex flex-col items-center justify-center font-mono w-auto"
   }, /*#__PURE__*/_react.default.createElement("h1", {
-    class: "text-3xl m-3 font-bold underline text-gray-100 max-w-sm"
+    class: "text-3xl m-3 font-bold underline text-gray-100 w-auto"
   }, "What to do next?"), /*#__PURE__*/_react.default.createElement(_TodoForm.default, {
     onSubmit: addTodo
   }), /*#__PURE__*/_react.default.createElement(_Todo.default, {
@@ -29134,7 +29135,7 @@ function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "functio
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 var App = function App() {
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("header", {
-    class: "text-5xl m-1.5 font-bold text-4xl font-mono text-gray-300 max-w-md"
+    class: "text-5xl m-1.5 font-bold text-4xl font-mono text-gray-300"
   }, "Todo's list"), /*#__PURE__*/_react.default.createElement(_Todolist.default, null));
 };
 var _default = App;
