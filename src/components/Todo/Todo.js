@@ -19,7 +19,9 @@ function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
   if (edit.id) {
     return <TodoForm edit={edit} onSubmit={submitUpdate} />
   }
-  console.log(todos)
+  localStorage.setItem('béla' + Date.now(), 'józsi')
+  let todoList = localStorage.getItem('key')
+  console.log(todoList)
   return todos.map((todo, index) => (
     <div key={index}>
       <div
@@ -36,7 +38,7 @@ function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
         <div className="flex flex-row gap-1" aria-label="Delete todo">
           <div className="delete-icon" onClick={() => removeTodo(todo.id)}>
             <svg
-              class="w-6 h-6"
+              className="w-6 h-6"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"

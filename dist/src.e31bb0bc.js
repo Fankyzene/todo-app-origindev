@@ -28995,7 +28995,9 @@ function Todo(_ref) {
       onSubmit: submitUpdate
     });
   }
-  console.log(todos);
+  localStorage.setItem('béla' + Date.now(), 'józsi');
+  var todoList = localStorage.getItem('key');
+  console.log(todoList);
   return todos.map(function (todo, index) {
     return /*#__PURE__*/_react.default.createElement("div", {
       key: index
@@ -29016,7 +29018,7 @@ function Todo(_ref) {
         return removeTodo(todo.id);
       }
     }, /*#__PURE__*/_react.default.createElement("svg", {
-      class: "w-6 h-6",
+      className: "w-6 h-6",
       fill: "none",
       stroke: "currentColor",
       viewBox: "0 0 24 24",
@@ -29180,7 +29182,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52231" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49450" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
