@@ -31,7 +31,7 @@ function Todolist() {
     setTodos(removeArr)
   }
 
-  const completeTodo = (id) => {
+  let completeTodo = (id) => {
     let updatedTodos = todos.map((todo) => {
       if (todo.id === id) {
         todo.isComplete = !todo.isComplete
